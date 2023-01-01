@@ -13,7 +13,8 @@ winOrLose = np.array([1, 1, 0, 1])
 sad = np.array([.1, 0.0, .1, .2])
 
 alpha = .01
-weights = np.array([[.1, .1, -.3], [.1, .2, 0], [0.0, 1.3, .1]]).T
+#                      Hurt?           win?          sad?
+weights = np.array([[.1, .1, -.3] , [.1, .2, 0], [0.0, 1.3, .1]]).T
 
 trainingData = np.array([toes, wlrec, nfans])
 goalPrediction = np.array([hurt, winOrLose, sad])    
