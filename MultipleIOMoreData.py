@@ -18,7 +18,7 @@ weights = np.array([[.1, .1, -.3], [.1, .2, 0], [0.0, 1.3, .1]]).T
 trainingData = np.array([toes, wlrec, nfans])
 goalPrediction = np.array([hurt, winOrLose, sad])    
 
-for i in range(500000):
+for i in range(50000):
 
     for j in range(np.size(toes)):
 
@@ -30,7 +30,7 @@ for i in range(500000):
         rawError = pred - goal
         weightDeltas = rawError * weights
 
-        weights -= alpha * weightDeltas
+        weights -= alpha * weightDeltas * data
 
 for x in range(np.size(toes)):
     print(x)

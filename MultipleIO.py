@@ -32,5 +32,5 @@ for i in range(50000):
     print("Weight Deltas: " + str(weightDeltas))
     print()
 
-    weights -= alpha * weightDeltas
+    weights -= alpha * weightDeltas * trainingData
 
