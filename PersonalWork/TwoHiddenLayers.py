@@ -9,15 +9,15 @@ def relu(x):
 def relu2deriv(x):
     return x > 0
 
-iterations = 1000000
-alpha = .0001
+iterations = 100000
+alpha = .001
+hidSize1 = 4
+hidSize2 = 4
 
-dataSet = np.array([[1, 0, 1],[0, 1, 1],[0, 0, 1],[1, 1, 1],[0, 1, 1],[1, 0, 1]])
-goalSet = np.array([[1, 2, 1],[0, 0, 1],[1, 0, 1],[1, 0, 1],[0, 0, 1],[1, 0, 2]])
+dataSet = np.array([[1, 0, 1],[0, 1, 2],[0, 0, 1],[1, 1, 1],[0, 1, 1],[1, 0, 1]])
+goalSet = np.array([[1, 4, 1],[3, 0, 1],[1, 17, 1],[1, 2, 1],[0, 0, 1],[1, 0, 2]])
 
 inSize = dataSet[0].size
-hidSize1 = 4
-hidSize2 = 5
 outSize = goalSet[0].size
 
 weights0To1 = np.random.random((inSize, hidSize1))  # INxH1
@@ -50,3 +50,8 @@ for iteration in range(iterations):
 
     if(iteration % 1000 == 5):
         print("Error: " + str(SSE))
+        # print("Prediction: " + str(layer3))
+        # print("Goal: " + str(goalSet[i:i+1]))
+        # print("2To3: " + str(weights2To3))
+        # print("1To2: " + str(weights1To2))
+        # print("0To1: " + str(weights0To1))
