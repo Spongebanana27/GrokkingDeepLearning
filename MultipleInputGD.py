@@ -15,7 +15,7 @@ weights = np.array([.3, .9, -.1])
 trainingData = np.array([toes[0], wlrec[0], nfans[0]])
 goalPrediction = winOrLose[0]
 
-for i in range(50):
+for i in range(5000):
 
     pred = neuralNetwork(trainingData, weights)
     squaredError = (pred - goalPrediction) ** 2
