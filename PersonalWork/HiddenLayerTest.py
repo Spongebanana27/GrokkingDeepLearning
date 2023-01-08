@@ -1,4 +1,4 @@
-
+# import
 import numpy as np
 
 def neuralNetwork(input, weights):
